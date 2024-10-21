@@ -12,7 +12,7 @@ class DCA:
         self.i_max=10000
         self.len_S=1000   #场景数
         self.alpha=0.95
-        self.k_star=(int) (self.len_S*self.alpha)-1
+        self.k_star=(int) (self.len_S*self.alpha-1)
         self.k_star_plus= self.k_star + 1
         self.N_max=10
         self.tao=0.001    #控制参数
@@ -43,10 +43,6 @@ class DCA:
             for s in range(self.len_S):
                 r_s=cp.scalar_product(x_val,z_sample[s])   #内积值作为优先队列的分数
                 R.put(r_s,z_sample[s])
-
-
-
-
 
             if(False) : #TODO 跳出逻辑
                 break
